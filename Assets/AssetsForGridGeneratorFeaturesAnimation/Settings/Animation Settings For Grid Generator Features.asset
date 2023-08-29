@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aaa56846c57f4546afe87b760d20bfa, type: 3}
+  m_Name: Animation Settings For Grid Generator Features
+  m_EditorClassIdentifier: 
+  horizontalGoList:
+  - {fileID: 2665388807189479386, guid: e99780615fb8fc44d90d1393a12e11e0, type: 3}
+  - {fileID: 7503237580461138685, guid: c5efce9bf366b1e4480a5eb8d358cd4a, type: 3}
+  - {fileID: 947975201198334529, guid: 9eb15467a62277c4486e6da70aa1e7ab, type: 3}
+  - {fileID: 1888053742678112338, guid: c62643fa66b26df48b0395259c321d47, type: 3}
+  - {fileID: 6368315673180668085, guid: 23fffe8e03fdfd54a8ca656109bac7c7, type: 3}
+  - {fileID: 1006248465899475552, guid: 0ce8acd377e20434dbd299d1d024bf76, type: 3}
+  - {fileID: 6694510988017809816, guid: d61c0754531511b42884c5779203224c, type: 3}
+  - {fileID: 1663505131452045218, guid: f4c8368612a049946aeabf27afab11f7, type: 3}
+  - {fileID: 2374616525886904295, guid: cb7806283e58a9e4ea461f1a370b7683, type: 3}
+  verticalGoList:
+  - {fileID: 4090841518592725831, guid: d5bff8d16c90454458ec9546775a05f3, type: 3}
+  - {fileID: 1527651779562107025, guid: 1f953df6916cb3346a0122203b06bd0f, type: 3}
+  - {fileID: 1119059308863126087, guid: 4778f9f4e285f134da9a7c467f073f96, type: 3}
+  - {fileID: 4186077833869517776, guid: 3414f3ee17b893c438e2b63566025e36, type: 3}
+  - {fileID: 7245056207156227716, guid: 94e8e3e36f0ff3d44b67cd3f4be279ab, type: 3}
+  - {fileID: 5668621373300112434, guid: 8d220a431c7264046934876403e7c794, type: 3}
+  - {fileID: 7459249204178971623, guid: c48c426688b273e42ade341bb8ff352f, type: 3}
+  - {fileID: 1618231572704393093, guid: 39fbbc0fc3ea62a4db0dda44d4d955db, type: 3}
+  - {fileID: 8973809512100012739, guid: 379b0738df5548a41a08d9cb12d3bd59, type: 3}
+  - {fileID: 547893384968264292, guid: cea0af983f7c21741817425e56f0e329, type: 3}
+  - {fileID: 4508545661349802076, guid: 4f921876fb4e3d44e92169a4e4fd5733, type: 3}
+  - {fileID: 4609134180229873772, guid: 5049c1bc726029a42bdf73a5f2b49a13, type: 3}
+  - {fileID: 5040361273608426497, guid: 874d28a8559a26b418028c78c4e07dca, type: 3}
+  - {fileID: 3831872472674099114, guid: d5c5794d4b8166644848fa43a5ed60ad, type: 3}
+  - {fileID: 4025217864888322790, guid: 765a91d43454c9e45a8f4e9cd7e73687, type: 3}
+  - {fileID: 7778399921169641578, guid: fa611474ac61fe64496a43a823f5eaf2, type: 3}
+  - {fileID: 4801097330870268846, guid: 44d432b0be3f0244cabbb7ad2a651478, type: 3}
+  time: 2.5
+  targetXScale: 35.6
+  targetYScale: 20
+  color32:
+    serializedVersion: 2
+    rgba: 4278190335
