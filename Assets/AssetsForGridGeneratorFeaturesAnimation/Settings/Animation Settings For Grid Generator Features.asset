@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aaa56846c57f4546afe87b760d20bfa, type: 3}
   m_Name: Animation Settings For Grid Generator Features
   m_EditorClassIdentifier: 
-  horizontalGoList:
+  goListForHorizontalAnim:
   - {fileID: 2665388807189479386, guid: e99780615fb8fc44d90d1393a12e11e0, type: 3}
   - {fileID: 7503237580461138685, guid: c5efce9bf366b1e4480a5eb8d358cd4a, type: 3}
   - {fileID: 947975201198334529, guid: 9eb15467a62277c4486e6da70aa1e7ab, type: 3}
@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: 6694510988017809816, guid: d61c0754531511b42884c5779203224c, type: 3}
   - {fileID: 1663505131452045218, guid: f4c8368612a049946aeabf27afab11f7, type: 3}
   - {fileID: 2374616525886904295, guid: cb7806283e58a9e4ea461f1a370b7683, type: 3}
-  verticalGoList:
+  goListForVerticalAnim:
   - {fileID: 4090841518592725831, guid: d5bff8d16c90454458ec9546775a05f3, type: 3}
   - {fileID: 1527651779562107025, guid: 1f953df6916cb3346a0122203b06bd0f, type: 3}
   - {fileID: 1119059308863126087, guid: 4778f9f4e285f134da9a7c467f073f96, type: 3}
@@ -40,9 +40,14 @@ MonoBehaviour:
   - {fileID: 4025217864888322790, guid: 765a91d43454c9e45a8f4e9cd7e73687, type: 3}
   - {fileID: 7778399921169641578, guid: fa611474ac61fe64496a43a823f5eaf2, type: 3}
   - {fileID: 4801097330870268846, guid: 44d432b0be3f0244cabbb7ad2a651478, type: 3}
-  time: 2.5
-  targetYScaleHorizontal: 35.6
-  targetYScaleVertical: 20
+  animDur: 2.5
+  targetYScaleForHorizontalAnim: 35.6
+  targetYScaleForVerticalAnim: 20
   color32:
     serializedVersion: 2
     rgba: 4283256141
+  howManyTimesRepeat: 3
+  animSpeed: 2
+  amplitudeX: 3
+  frequencyY: 2
+  amplitudeY: 1.5

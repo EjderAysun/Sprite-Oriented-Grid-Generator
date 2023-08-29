@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 namespace GridGeneratorFeaturesAnimation {
-    internal class DrawCoordinateSystem {
+    internal class CoordinateSystemDrawing {
 
         // set the scale of all objects to increase on the y-axis
         internal IEnumerator LineAnimationWithScale(GameObject goToBeRescaled, float animDur, float targetYScale, Color32 color32) {
