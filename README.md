@@ -20,7 +20,8 @@ This grid generator was made for Unity, but the algorithm is generally applicabl
 
 ---
 ## Status
-Released; project is complete, but might receive some updates
+~~Released; project is complete, but might receive some updates~~  
+In development; project is in active development
 
 ---
 ## Version
