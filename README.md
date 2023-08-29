@@ -1,4 +1,4 @@
-# Canvas-Oriented Grid Generator
+# Sprite-Oriented Grid Generator
 This grid generator sensitive to canvas scale, canvas coordinate, and canvas pixels per unit.
 
 ---
