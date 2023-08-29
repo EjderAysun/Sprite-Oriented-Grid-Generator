@@ -27,12 +27,12 @@ namespace GridGeneratorFeaturesAnimation {
                     sign++;
                 }
             }
-            targetObject.transform.position = Vector3.zero;
+            // targetObject.transform.position = Vector3.zero;
             textForCoordinates.text = targetObject.transform.position.ToString();
         }
 
         internal IEnumerator SinusAnimation(GameObject targetObject, float animDur, float frequency, float amplitude, float animSpeed) {
-            float smoothnessValue = animDur/Time.fixedDeltaTime;
+            float smoothnessValue = animDur / Time.fixedDeltaTime;
             float elapsedTime = 0;
             for(;smoothnessValue>=0; smoothnessValue--) {
                 elapsedTime += Time.fixedDeltaTime;
@@ -43,7 +43,7 @@ namespace GridGeneratorFeaturesAnimation {
         }
 
         internal IEnumerator CosxPlusSinxOver5Animation(GameObject targetObject, float animDur, float frequency, float amplitude, float animSpeed) {
-            float smoothnessValue = animDur/Time.fixedDeltaTime;
+            float smoothnessValue = animDur / Time.fixedDeltaTime;
             float elapsedTime = 0;
             for(;smoothnessValue>=0; smoothnessValue--) {
                 elapsedTime += Time.fixedDeltaTime;
