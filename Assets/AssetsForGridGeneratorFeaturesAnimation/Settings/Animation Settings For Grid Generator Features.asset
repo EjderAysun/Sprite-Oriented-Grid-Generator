@@ -41,8 +41,8 @@ MonoBehaviour:
   - {fileID: 7778399921169641578, guid: fa611474ac61fe64496a43a823f5eaf2, type: 3}
   - {fileID: 4801097330870268846, guid: 44d432b0be3f0244cabbb7ad2a651478, type: 3}
   time: 2.5
-  targetXScale: 35.6
-  targetYScale: 20
+  targetYScaleHorizontal: 35.6
+  targetYScaleVertical: 20
   color32:
     serializedVersion: 2
-    rgba: 4278190335
+    rgba: 4283256141

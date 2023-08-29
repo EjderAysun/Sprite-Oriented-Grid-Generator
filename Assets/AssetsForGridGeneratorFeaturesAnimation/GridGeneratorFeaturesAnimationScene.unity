@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 315658328}
   - component: {fileID: 315658329}
   m_Layer: 0
-  m_Name: CoordinateSystemAnimationTest
+  m_Name: CoordinateSystemAnimation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,13 +3,14 @@ using UnityEngine;
 
 namespace GridGeneratorFeaturesAnimation {
     internal class DrawCoordinateSystem {
-        internal IEnumerator LineAnimationWithScale(GameObject go, float time, float targetXScale, float targetYScale, Color32 color32) {
-            float smoothnessValue = time / Time.fixedDeltaTime;
-            float incrementXValue = targetXScale / smoothnessValue;
+
+        // set the scale of all objects to increase on the y-axis
+        internal IEnumerator LineAnimationWithScale(GameObject goToBeRescaled, float animDur, float targetYScale, Color32 color32) {
+            float smoothnessValue = animDur / Time.fixedDeltaTime;
             float incrementYValue = targetYScale / smoothnessValue;
-            Vector3 incrementVector = new Vector3(incrementXValue, incrementYValue, 0f);
-            go.GetComponent<SpriteRenderer>().color = color32;
-            Transform tf = go.transform;
+            Vector3 incrementVector = new Vector3(0f, incrementYValue, 0f);
+            goToBeRescaled.GetComponent<SpriteRenderer>().color = color32;
+            Transform tf = goToBeRescaled.transform;
             for(;smoothnessValue>=0; smoothnessValue--){
                 tf.localScale += incrementVector;
                 yield return new WaitForSeconds(Time.fixedDeltaTime);
