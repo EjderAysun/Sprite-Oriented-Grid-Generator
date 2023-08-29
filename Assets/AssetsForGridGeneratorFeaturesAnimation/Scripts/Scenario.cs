@@ -4,6 +4,12 @@ using UnityEngine;
 
 namespace GridGeneratorFeaturesAnimation {
     internal class Scenario : MonoBehaviour {
+        
+        [SerializeField] private GameObject _targetObject;
+        [SerializeField] private TMP_Text _text;
+        
+        ///
+        
         private CoordinateSystemDrawing _drawCoordinateSystem;
         [SerializeField] private AnimationSettingsForGridGeneratorFeatures animationSettingsForGridGeneratorFeatures;
         [SerializeField] private GameObject _lineHolder;
@@ -17,13 +23,18 @@ namespace GridGeneratorFeaturesAnimation {
         ///
 
         private CoordinateChanging _coordinateChanging;
-        [SerializeField] private GameObject _targetObject;
-        [SerializeField] private TMP_Text _textForCoordinates;
         private int _howManyTimesRepeat;
         private float _animSpeed;
         private float _amplitudeX;
         private float _frequencyY;
         private float _amplitudeY;
+
+        ///
+        
+        private PixelsPerUnitChanging _pixelsPerUnitChanging;
+        private float _ppuAnimDur;
+        private float _howMuchPPUDecrease;
+        private float _refPPU;
 
         private IEnumerator Start() {
 
@@ -41,6 +52,11 @@ namespace GridGeneratorFeaturesAnimation {
             _amplitudeX = animationSettingsForGridGeneratorFeatures.AmplitudeX;
             _frequencyY = animationSettingsForGridGeneratorFeatures.FrequencyY;
             _amplitudeY = animationSettingsForGridGeneratorFeatures.AmplitudeY;
+
+            _pixelsPerUnitChanging = new PixelsPerUnitChanging();
+            _ppuAnimDur = animationSettingsForGridGeneratorFeatures.PpuAnimDur;
+            _howMuchPPUDecrease = animationSettingsForGridGeneratorFeatures.HowMuchPPUDecrease;
+            _refPPU = animationSettingsForGridGeneratorFeatures.RefPPU;
 
             GameObject instantiatedPrefab;
 
@@ -60,12 +76,12 @@ namespace GridGeneratorFeaturesAnimation {
             instantiatedPrefab.transform.parent = _lineHolder.transform;
             yield return StartCoroutine(_drawCoordinateSystem.LineAnimationWithScale(instantiatedPrefab, _animDurForDrawingCoordinateSystem, _targetYScaleForVerticalAnim, _color32));
 
-            yield return StartCoroutine(_coordinateChanging.InfinitySignAnimation(_targetObject, _howManyTimesRepeat, _animSpeed, _amplitudeX, _frequencyY, _amplitudeY, _textForCoordinates));
+            yield return StartCoroutine(_coordinateChanging.InfinitySignAnimation(_targetObject, _howManyTimesRepeat, _animSpeed, _amplitudeX, _frequencyY, _amplitudeY, _text));
 
-            // yield return StartCoroutine(_coordinateChanging.SinusAnimation(_targetObject, animDur, frequency, amplitude, _animSpeed));
-
-            // yield return StartCoroutine(_coordinateChanging.CosxPlusSinxOver5Animation(_targetObject, animDur, frequency, amplitude, _animSpeed));
+            yield return StartCoroutine(_pixelsPerUnitChanging.PixelsPerUnitDecrease(_targetObject, _text, _ppuAnimDur/4f, _howMuchPPUDecrease, _refPPU));
+            yield return StartCoroutine(_pixelsPerUnitChanging.PixelsPerUnitIncrease(_targetObject, _text, _ppuAnimDur/2f, _howMuchPPUDecrease*2f, _refPPU-_howMuchPPUDecrease));
+            yield return StartCoroutine(_pixelsPerUnitChanging.PixelsPerUnitDecrease(_targetObject, _text, _ppuAnimDur/4f, _howMuchPPUDecrease, _howMuchPPUDecrease + _refPPU));
         }
-        
+
     }
 }

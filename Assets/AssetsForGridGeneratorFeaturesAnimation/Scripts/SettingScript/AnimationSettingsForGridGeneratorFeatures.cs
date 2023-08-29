@@ -75,5 +75,24 @@ namespace GridGeneratorFeaturesAnimation {
             set => amplitudeY = value;
         }
 
+        [Header("Settings For Changing Pixels Per Unit Animation")]
+        [SerializeField] internal float ppuAnimDur = 2.5f;
+        internal float PpuAnimDur {
+            get => ppuAnimDur;
+            set => ppuAnimDur = value;
+        }
+
+        [SerializeField] internal float howMuchPPUDecrease = 50f;
+        internal float HowMuchPPUDecrease {
+            get => howMuchPPUDecrease;
+            set => howMuchPPUDecrease = value;
+        }
+
+        [SerializeField] internal float refPPU = 100f;
+        internal float RefPPU {
+            get => refPPU;
+            set => refPPU = value;
+        }
+
     }
 }
