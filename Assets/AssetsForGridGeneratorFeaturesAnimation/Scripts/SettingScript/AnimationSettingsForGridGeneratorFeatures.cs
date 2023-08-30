@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 namespace GridGeneratorFeaturesAnimation {
@@ -67,7 +66,6 @@ namespace GridGeneratorFeaturesAnimation {
             get => frequencyY;
             set => frequencyY = value;
         }
-
 
         [SerializeField] internal float amplitudeY = 1.5f;
         internal float AmplitudeY {
