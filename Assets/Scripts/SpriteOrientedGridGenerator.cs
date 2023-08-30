@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GridGenerator : MonoBehaviour {
+public class SpriteOrientedGridGenerator : MonoBehaviour {
 
     // ref ==> reference
     // pref ==> prefab
@@ -11,39 +11,33 @@ public class GridGenerator : MonoBehaviour {
     // coord ==> coordinate
     // calc ==> calculate
 
+    [SerializeField] private SpriteBasedGridGeneratorSettings spriteBasedGridGeneratorSettings;
+
     [Header("Game Objects")]
     [SerializeField] private GameObject _refSpriteHolders;
-    [SerializeField] private GameObject _placeHolders;
     [SerializeField] private GameObject _gridPref;
     
-
-    [Header("Grid Information")]
-    [SerializeField] private float _numOfVertGrids, _numOfHorGrids;
-
-    [Header("How many coordinate units are between horizontal grids?")]
-    [SerializeField] private float _horSpaceUnit;
-
-    [Header("How many coordinate units are between vertical grids?")]
-    [SerializeField] private float _vertSpaceUnit;
-
     // ---------------------------------------------
 
-    [Header("How many coordinate units is the upper frame thickness?")]
-    [SerializeField] private float _upperFrameThickness;
+    private int _numOfVertGrids, _numOfHorGrids;
+    private float _horSpaceUnit, _vertSpaceUnit;
+    private float _upperFrameThickness, _lowerFrameThickness, _leftFrameThickness, _rightFrameThickness;
 
-    [Header("How many coordinate units is the lower frame thickness?")]
-    [SerializeField] private float _lowerFrameThickness;
-
-    [Header("How many coordinate units is the left frame thickness?")]
-    [SerializeField] private float _leftFrameThickness;
-
-    [Header("How many coordinate units is the right frame thickness?")]
-    [SerializeField] private float _rightFrameThickness;
+    // ---------------------------------------------
 
     private float _canvasWidth, _canvasHeight, _canvasPixelsPerUnit, _canvasScaleX, _canvasScaleY;
     private Vector3 _canvasCoord;
 
     private void Start() {
+
+        _numOfVertGrids = spriteBasedGridGeneratorSettings.NumOfVertGrids;
+        _numOfHorGrids = spriteBasedGridGeneratorSettings.NumOfHorGrids;
+        _horSpaceUnit = spriteBasedGridGeneratorSettings.HorSpaceUnit;
+        _vertSpaceUnit = spriteBasedGridGeneratorSettings.VertSpaceUnit;
+        _upperFrameThickness = spriteBasedGridGeneratorSettings.UpperFrameThickness;
+        _lowerFrameThickness = spriteBasedGridGeneratorSettings.LowerFrameThickness;
+        _leftFrameThickness = spriteBasedGridGeneratorSettings.LeftFrameThickness;
+        _rightFrameThickness = spriteBasedGridGeneratorSettings.RightFrameThickness;
         
         Sprite canvasSprite = _refSpriteHolders.GetComponent<SpriteRenderer>().sprite;
         Texture canvasTex = canvasSprite.texture;
@@ -78,7 +72,6 @@ public class GridGenerator : MonoBehaviour {
         }
 
         CreateGrid();
-
     }
 
     private void CreateGrid() {
@@ -97,23 +90,41 @@ public class GridGenerator : MonoBehaviour {
         float consGridScX = ((widthOfGridTable / _canvasPixelsPerUnit) - (_numOfHorGrids - 1f) * _horSpaceUnit) / _numOfHorGrids;
         float consGridScY = ((heightOfGridTable / _canvasPixelsPerUnit) - (_numOfVertGrids - 1f) * _vertSpaceUnit) / _numOfVertGrids;
 
-        for (int i = 0; i < _numOfVertGrids; i++)
-        {
+        for (int i = 0; i < _numOfVertGrids; i++) {
+            
             float posY;
             posY = centerOfGrid.y + consPosY * ((_numOfVertGrids - 1f - i * 2f) / _numOfVertGrids) + ((_numOfVertGrids - 1f) / 2f - i) * _vertSpaceUnit;
 
-            for (int j = 0; j < _numOfHorGrids; j++)
-            {
+            for (int j = 0; j < _numOfHorGrids; j++) {
+
                 float posX;
                 posX = centerOfGrid.x - consPosX * ((_numOfHorGrids - 1f - j * 2f) / _numOfHorGrids) - ((_numOfHorGrids - 1f) / 2f - j) * _horSpaceUnit;
+
+                // take it as a degree
+                Vector3 vector = RotatePointAroundAnotherPoint(new Vector3(posX, posY, 0f), transform.position, transform.eulerAngles.z);
 
                 GameObject grid = Instantiate(_gridPref) as GameObject;
                 grid.gameObject.transform.localScale = new Vector2(consGridScX, consGridScY);
                 grid.name = "index" + (i * _numOfVertGrids + j);
-                grid.transform.position = new Vector3(posX, posY, 0);
-                grid.transform.parent = _placeHolders.transform;
+                grid.transform.position = vector;
+                grid.transform.rotation = transform.rotation;
+                grid.transform.parent = transform;
             }
         }
+
+    }
+
+    private Vector3 RotatePointAroundAnotherPoint(Vector3 originalPoint, Vector3 centerOfCircle, float clockwiseRotationAngle) {
+        // cw ==> clockwise
+        float x1 = originalPoint.x - centerOfCircle.x;
+        float y1 = originalPoint.y - centerOfCircle.y;
+        // radians must be used in this formula
+        float cwDeg2Rad = clockwiseRotationAngle * Mathf.Deg2Rad;
+        float x2 = x1 * Mathf.Cos(cwDeg2Rad) - y1 * Mathf.Sin(cwDeg2Rad);
+        float y2 = x1 * Mathf.Sin(cwDeg2Rad) + y1 * Mathf.Cos(cwDeg2Rad);
+        float m = x2 + centerOfCircle.x;
+        float n = y2 + centerOfCircle.y;
+        return new Vector3(m, n, 0);
     }
     
 }
