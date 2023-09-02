@@ -11,7 +11,7 @@ public class SpriteOrientedGridGenerator : MonoBehaviour {
     // coord ==> coordinate
     // calc ==> calculate
 
-    [SerializeField] private SpriteBasedGridGeneratorSettings spriteBasedGridGeneratorSettings;
+    [SerializeField] private SpriteOrientedGridGeneratorSettings spriteOrientedGridGeneratorSettings;
 
     [Header("Game Objects")]
     [SerializeField] private GameObject _refSpriteHolders;
@@ -30,14 +30,14 @@ public class SpriteOrientedGridGenerator : MonoBehaviour {
 
     private void Start() {
 
-        _numOfVertGrids = spriteBasedGridGeneratorSettings.NumOfVertGrids;
-        _numOfHorGrids = spriteBasedGridGeneratorSettings.NumOfHorGrids;
-        _horSpaceUnit = spriteBasedGridGeneratorSettings.HorSpaceUnit;
-        _vertSpaceUnit = spriteBasedGridGeneratorSettings.VertSpaceUnit;
-        _upperFrameThickness = spriteBasedGridGeneratorSettings.UpperFrameThickness;
-        _lowerFrameThickness = spriteBasedGridGeneratorSettings.LowerFrameThickness;
-        _leftFrameThickness = spriteBasedGridGeneratorSettings.LeftFrameThickness;
-        _rightFrameThickness = spriteBasedGridGeneratorSettings.RightFrameThickness;
+        _numOfVertGrids = spriteOrientedGridGeneratorSettings.NumOfVertGrids;
+        _numOfHorGrids = spriteOrientedGridGeneratorSettings.NumOfHorGrids;
+        _horSpaceUnit = spriteOrientedGridGeneratorSettings.HorSpaceUnit;
+        _vertSpaceUnit = spriteOrientedGridGeneratorSettings.VertSpaceUnit;
+        _upperFrameThickness = spriteOrientedGridGeneratorSettings.UpperFrameThickness;
+        _lowerFrameThickness = spriteOrientedGridGeneratorSettings.LowerFrameThickness;
+        _leftFrameThickness = spriteOrientedGridGeneratorSettings.LeftFrameThickness;
+        _rightFrameThickness = spriteOrientedGridGeneratorSettings.RightFrameThickness;
         
         Sprite canvasSprite = _refSpriteHolders.GetComponent<SpriteRenderer>().sprite;
         Texture canvasTex = canvasSprite.texture;
@@ -126,5 +126,5 @@ public class SpriteOrientedGridGenerator : MonoBehaviour {
         float n = y2 + centerOfCircle.y;
         return new Vector3(m, n, 0);
     }
-    
+
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Settings/Sprite Based Grid Generator Settings")]
-public class SpriteBasedGridGeneratorSettings : ScriptableObject {
+public class SpriteOrientedGridGeneratorSettings : ScriptableObject {
 
     [Header("Grid Settings")]
     [SerializeField] private int numOfVertGrids = 5;
