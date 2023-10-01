@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0789d9a15e01dc542b5ab8e2b4057613, type: 3}
-  m_Name: Sprite Based Grid Generator Settings
+  m_Name: Sprite Oriented Grid Generator Settings
   m_EditorClassIdentifier: 
-  numOfVertGrids: 5
-  numOfHorGrids: 5
-  horSpaceUnit: 0.2
-  vertSpaceUnit: 0.2
-  upperFrameThickness: 0.4
+  numOfVertGrids: 10
+  numOfHorGrids: 24
+  horSpaceUnit: 0.05
+  vertSpaceUnit: 0.075
+  upperFrameThickness: 0.2
   lowerFrameThickness: 0.4
-  leftFrameThickness: 0.5
-  rightFrameThickness: 0.5
+  leftFrameThickness: 0.6
+  rightFrameThickness: 0.1
