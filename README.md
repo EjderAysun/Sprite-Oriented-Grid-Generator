@@ -16,7 +16,10 @@ This grid generator was made for Unity, but the algorithm is generally applicabl
 
 ---
 ## Screenshots
-![sample_grid](https://github-production-user-asset-6210df.s3.amazonaws.com/71559273/253433492-14f3ac57-7899-4d42-b2aa-f4c50e952bf4.png)
+![sample_grid](https://github-production-user-asset-6210df.s3.amazonaws.com/71559273/271843284-975b8077-bd25-48b2-92af-addb87f4ef80.png)
+
+(Old appearance)
+![sample_grid_old](https://github-production-user-asset-6210df.s3.amazonaws.com/71559273/253433492-14f3ac57-7899-4d42-b2aa-f4c50e952bf4.png)
 
 ---
 ## Status
