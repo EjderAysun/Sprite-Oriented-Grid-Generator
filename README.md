@@ -33,5 +33,5 @@ On hold; development is paused for now
 
 ---
 ## Licence & Copyright
-© Ejder Aysun, Canvas-Oriented Grid Generator  
+© Ejder Aysun, Sprite-Oriented Grid Generator  
 Licensed under the [MIT Licence](https://github.com/EjderAysun/canvas-oriented-grid-generator/blob/main/LICENCE)
