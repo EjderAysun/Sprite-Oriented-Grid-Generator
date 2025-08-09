@@ -25,7 +25,8 @@ This grid generator was made for Unity, but the algorithm is generally applicabl
 ## Status
 ~~Released; project is complete, but might receive some updates~~  
 ~~In development; project is in active development~~  
-On hold; development is paused for now
+~~On hold; development is paused for now~~  
+Released; project is complete
 
 ---
 ## Version
